@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Hello from '@/components/Hello'
 import Qindex from '@/pages/Qindex/Qindex'
 import Qperformance from '@/pages/Qperformance/Qperformance'
 
@@ -19,6 +19,11 @@ export default new Router({
           component: Qperformance,
         }
       ]
+    },
+    {
+      path: '/Hello',
+      name: 'Hello',
+      component: Hello,
     }
   ]
 })

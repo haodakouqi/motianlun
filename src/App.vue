@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'App'
 }
@@ -12,6 +13,8 @@ export default {
 
 <style lang='scss'>
 @import "./assets/common/public.scss";
+@import '../node_modules/mint-ui/lib/style.css';
+
 #app {
  height: 100%;
 }

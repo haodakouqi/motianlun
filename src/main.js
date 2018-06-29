@@ -3,8 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import Mint from 'mint-ui';
-Vue.use(Mint);
+// import MintUI from 'mint-ui'
+// import 'mint-ui/lib/style.css'
+// Vue.use(MintUI)
+import 'swiper/dist/css/swiper.css';
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

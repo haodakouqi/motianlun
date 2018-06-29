@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var qperformance = require('./routes/Qperformance');
+var qpa = require('./routes/Qpa');
 
 var app = express();
 app.all('*', function(req, res, next) {
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/qperformance', qperformance);
+app.use('/qpa', qpa);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
