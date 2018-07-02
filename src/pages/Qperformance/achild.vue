@@ -1,43 +1,53 @@
+<!-- achild -->
 <template>
-  <div class="Hello">
-      <div class="footer_one">
-            <div class="fto_left"><img :src="'http://pimg.damai.cn/perform/project/'+ibook.fold+'/'+ibook.projectId+'_n.jpg'" alt=""></div>
+  <div>
+    <div class="achild" v-if="life">
+        <div class="footer_one" v-for="(item,index) in achild.body.suggest" :key="index">
+            <div class="fto_left"><img :src="'http://pimg.damai.cn/perform/project/'+item.fold+'/'+item.projectId+'_n.jpg'" alt=""></div>
             <div class="fto_right">
-                <h1>{{ibook.projectName}}</h1>
-                <p>{{ibook.startTime}}</p>
-                <p>{{ibook.venue}}</p>
-                <p class="fto_right_px"><span>{{ibook.price}}</span>元起</p>
+                <h1>{{item.projectName}}</h1>
+                <p>{{item.startTime}}</p>
+                <p>{{item.venue}}</p>
+                <p class="fto_right_px"><span>{{item.price}}</span>元起</p>
                 <p class="fto_right_py">"平凡之路，且听且吟。再次相遇，此间少年。     "</p>
                 <div class="fto_right_a"><div>9.3</div>折起</div>
             </div>
         </div>
+    </div>
   </div>
 </template>
+
 <script>
 export default {
-  name: 'Hello',
+  name:"achild",
   data () {
     return {
-      
-    }
+      life:false,
+      achild:{},
+      Qcity:"西安",
+      Qctl:"欢乐"
+    };
   },
-  computed:{
-      ibook(){
-        return this.$store.getters.getdetail;
-      }
+  mounted() {
+    this.initfetch(this.Qcity,this.Qctl);
   },
-  methods:{
-    
-  },
-  mounted(){
 
+  methods: {
+    initfetch(fc,ft){
+      fetch('http://localhost:8410/qpa/data?city='+fc+'&ctl='+ft)
+      .then(res=>res.json())
+      .then(data=>{
+          this.life=true;
+          this.achild=JSON.parse(data);
+          console.log(this.achild);
+      })
+    }
   }
 }
-</script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+</script>
 <style lang='scss' scoped>
-.Hello{
+.achild{
     .footer_one{
         display: flex;border-bottom: 1px solid #f3f3f3;
         .fto_left{
@@ -78,5 +88,8 @@ export default {
             }
         }
     }  
+    .backTop{
+        position: fixed;bottom:0.5rem;right: 0.4rem;
+    }
 }
 </style>

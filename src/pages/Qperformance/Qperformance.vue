@@ -9,90 +9,78 @@
       </header>
       <section>
           <div class="section_index">
-            <div class="sec_choose" :class="{'sec_active':'0'==showx}" @click='Qchange("0","西安")'>
+            <div class="sec_choose" :class="{'sec_active':'0'==showx}" @click='Qchange("0",["西安","演唱会"])'>
                 <div class="box"><span>全部</span></div>
             </div>
-            <div class="sec_choose" :class="{'sec_active':'1'==showx}" @click='Qchange("1","北京","演唱会")'>
+            <div class="sec_choose" :class="{'sec_active':'1'==showx}" @click='Qchange("1",["香港","演唱会"])'>
                 <div class="box"><span>演唱会</span></div>
             </div>
-            <div class="sec_choose" :class="{'sec_active':'2'==showx}" @click='Qchange("2","上海","话剧歌剧")'>
+            <div class="sec_choose" :class="{'sec_active':'2'==showx}" @click='Qchange("2",["上海","话剧歌剧"])'>
                 <div class="box"><span>话剧歌剧</span></div>
             </div>
-            <div class="sec_choose" :class="{'sec_active':'3'==showx}" @click='Qchange("3","广州","音乐会")'>
+            <div class="sec_choose" :class="{'sec_active':'3'==showx}" @click='Qchange("3",["广州","音乐会"])'>
                 <div class="box"><span>音乐会</span></div>
             </div>
-            <div class="sec_choose" :class="{'sec_active':'4'==showx}" @click='Qchange("4","香港","体育赛事")'>
+            <div class="sec_choose" :class="{'sec_active':'4'==showx}" @click='Qchange("4",["香港","体育赛事"])'>
                 <div class="box"><span>体育赛事</span></div>
             </div>
-            <div class="sec_choose" :class="{'sec_active':'5'==showx}" @click='Qchange("5","纽约","舞蹈芭蕾")'>
+            <div class="sec_choose" :class="{'sec_active':'5'==showx}" @click='Qchange("5",["纽约","舞蹈芭蕾"])'>
                 <div class="box"><span>舞蹈芭蕾</span></div>
             </div>
-            <div class="sec_choose" :class="{'sec_active':'6'==showx}" @click='Qchange("6","东京","儿童亲子")'>
+            <div class="sec_choose" :class="{'sec_active':'6'==showx}" @click='Qchange("6",["东京","儿童亲子"])'>
                 <div class="box"><span>儿童亲子</span></div>
             </div>
-            <div class="sec_choose" :class="{'sec_active':'7'==showx}" @click='Qchange("7","深圳","展览休闲")'>
+            <div class="sec_choose" :class="{'sec_active':'7'==showx}" @click='Qchange("7",["深圳","展览休闲"])'>
                 <div class="box"><span>展览休闲</span></div>
             </div>
-            <div class="sec_choose" :class="{'sec_active':'8'==showx}" @click='Qchange("8","西安","曲艺杂谈")'>
+            <div class="sec_choose" :class="{'sec_active':'8'==showx}" @click='Qchange("8",["西安","曲艺杂谈"])'>
                 <div class="box"><span>曲艺杂谈</span></div>
             </div>
           </div>
       </section>
       <nav>
-          <div class="nav_left">
-            <select>
-                <option value="bucuo">kankan</option>
-            </select>
+          <div class="nav_box">
+              <span>推荐排序</span>
           </div>
-          <div class="nav_right">
-            
+          <div class="nav_box">
+              <span>全部时间</span>
           </div>
+          <div class="nav_ico"></div>
       </nav>
-      <footer v-if="life">
+      <footer ref="viewBox" v-ascroll>
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <h1>第1个</h1>
-                    <div class="footer_one" v-for="(item,index) in Qdata.body.suggest" :key="index">
-                        <div class="fto_left"><img :src="'http://pimg.damai.cn/perform/project/'+item.fold+'/'+item.projectId+'_n.jpg'" alt=""></div>
-                        <div class="fto_right">
-                            <h1>{{item.projectName}}</h1>
-                            <p>{{item.startTime}}-{{item.showTime}}</p>
-                            <p>{{item.venue}}</p>
-                            <p class="fto_right_px"><span>{{item.price}}</span>元起</p>
-                            <p class="fto_right_py">"平凡之路，且听且吟。再次相遇，此间少年。     "</p>
-                            <div class="fto_right_a"><div>9.3</div>折起</div>
-                        </div>
-                    </div>
+                    <achild></achild>
                 </div>
                 <div class="swiper-slide">
-                    <h1>第2个</h1>
+                    <bchild></bchild>
                 </div>
                 <div class="swiper-slide">
-                    <h1>第3个</h1>
+                    <cchild></cchild>
                 </div>
                 <div class="swiper-slide">
-                    <h1>第4个</h1>
+                    <dchild></dchild>
                 </div>
                 <div class="swiper-slide">
-                    <h1>第5个</h1>
+                    <echild></echild>
                 </div>
                 <div class="swiper-slide">
-                    <h1>第6个</h1>
+                    <fchild></fchild>
                 </div>
                 <div class="swiper-slide">
-                    <h1>第7个</h1>
-
+                    <gchild></gchild>
                 </div>
                 <div class="swiper-slide">
-                    <h1>第8个</h1>
-
+                    <hchild></hchild>
                 </div>
                 <div class="swiper-slide">
-                    <h1>第9个</h1>
-
+                    <ichild></ichild>
                 </div>
           </div>
+        </div>
+        <div class="backTop" id="p" @click="backTop">
+            <span>头</span>
         </div>
       </footer>
   </div>
@@ -100,54 +88,81 @@
 
 <script>
 import Swiper from "swiper";
+import achild from './achild';
+import bchild from './bchild';
+import cchild from './cchild';
+import dchild from './dchild';
+import echild from './echild';
+import fchild from './fchild';
+import gchild from './gbook';
+import hchild from './hbook';
+import ichild from './ibook';
 export default {
     name:"Qperformance",
     data () {
         return {
-            mySwiper_data:'',
-            showx:"1",
-            Qdata:{},
-            Qcity:"西安",
-            Qctl:"演唱会",
-            life:false
+            showx:"0",
+            Qcity:["西安","演唱会"],
+            life:true
         };
     },
+    directives:{
+        ascroll:{
+            inserted(el){
+                var p =document.getElementById('p');
+                el.addEventListener('scroll', function(){
+                    if(this.scrollTop>1000){
+                        p.style.display="block";
+                    }else{
+                        p.style.display="none";
+                    }
+                }, false)
+            }
+        }
+    },
     methods:{
-        Qchange(Fa,city,ctl){
-            this.showx=Fa;
-            this.Qcity=city;
-            this.Qctl=ctl;
+        backTop(){
+            console.log(this.$refs.viewBox.scrollTop);
+            this.$refs.viewBox.scrollTop = 0;
+        },
+        Qchange(Fa,city){
             this.mySwiper_data.slideTo(Fa, 1000, false);
-            // this.__initfetch();
+            this.showx=Fa;
+            this.Qcity =city; 
+            this.$store.dispatch('tianjia',{city});
         },
        Qswiper(){
+            var that =this;
+            var a =this.Qcity;
             var mySwiper = new Swiper(".swiper-container", {
                 direction: "horizontal",
                 on: {
                     slideChangeTransitionStart: function(){
-                        alert(this.activeIndex);
+                        that.showx = this.activeIndex;
+                        // that.$store.dispatch('tianjia',{a});
                     },
                 },
             });
             this.mySwiper_data = mySwiper;
-        },
-        __initfetch(){
-            this.life=false;
-            fetch('http://localhost:8410/qpa/data?city='+this.Qcity+'&'+this.Qctl)
-            .then(res=>res.json())
-            .then(data=>{
-                // console.log(JSON.parse(data));
-                this.life=true;
-                this.Qdata = JSON.parse(data);
-                console.log(this.Qdata);
-                this.$nextTick(function(){
-                    this.Qswiper();
-                })
-            })
         }
     },
+    created() {
+        
+    },
     mounted(){
-        this.__initfetch();
+        this.Qswiper();
+        console.log(this.$store);
+    },
+    components: {
+        achild,
+        bchild,
+        cchild,
+        dchild,
+        echild,
+        fchild,
+        gchild,
+        hchild,
+        ichild,
     }
 }
 
@@ -193,50 +208,28 @@ export default {
         }
     }
     nav{
-        display: flex;background: #c6c6c6;
+        display: flex;height: 0.37rem;position: relative;
+        line-height: 0.37rem;
+        border-top:1px solid #f8f8fa;
+        border-bottom:2px solid #f8f8fa;box-shadow:3px 3px 3px #f8f8fa;
+        .nav_box{
+            width: 50%;text-align: center
+        }
+        .nav_ico{
+            position: absolute;width: 1px;height: 0.18rem;background: #f2f2f2;
+            top:0.09rem;left: 1.87rem;
+        }
     }
     footer{
-      flex: 1;overflow-y: scroll;
-            .footer_one{
-                display: flex;border-bottom: 1px solid #f3f3f3;
-                .fto_left{
-                    width: 0.92rem;height: 1.23rem;padding:0.12rem 0.12rem;
-                }
-                .fto_right{
-                    flex: 1;position: relative;
-                    h1{
-                        line-height: 0.23rem;
-                        font-size: 0.16rem;padding:0.1rem 0 0.13rem;font-weight: 600;
-                        color:#000000;
-                    }
-                    p{
-                        line-height: 0.22rem;font-size: 0.12rem;
-                    }
-                    .fto_right_px{
-                        font-size: 0.12rem;line-height: 0.36rem;
-                        border-bottom: 1px solid #f3f3f3;
-                        span{
-                            color:#ff3c5c;font-size: 0.14rem;
-                        }
-                    }
-                    .fto_right_py{
-                        line-height: 0.17rem;font-size: 0.12rem;
-                        padding: 0.12rem 0;
-                    }
-                    .fto_right_a{
-                        position: absolute;top:0.4rem;right:0.1rem;
-                        border-radius: 50%;background: #fb1a50;
-                        width: 0.44rem;height: 0.44rem;line-height: 0.08rem;
-                        padding:0.04rem;text-align: center;
-                        color:rgba(254,175,196,.5);
-                        font-size: 0.12rem;
-                        div{
-                            color:#ffffff;font-size: 0.18rem;
-                            line-height: 0.26rem;font-weight: 600;
-                        }
-                    }
-                }
-            }  
+        flex: 1;overflow-y: scroll;
+        .backTop{
+            position: fixed;bottom:0.8rem;right: 0.4rem;background: blue;
+            z-index: 88;display: none;width: 0.4rem;height: 0.4rem;line-height: 0.4rem;
+            text-align: center;border-radius:100%;
+            span{
+                color:red;
+            }
+    }
     }
 }
 </style>
