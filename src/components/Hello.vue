@@ -1,6 +1,6 @@
 <template>
   <div class="Hello">
-      <div class="footer_one">
+        <div class="footer_one">
             <div class="fto_left"><img :src="'http://pimg.damai.cn/perform/project/'+ibook.fold+'/'+ibook.projectId+'_n.jpg'" alt=""></div>
             <div class="fto_right">
                 <h1>{{ibook.projectName}}</h1>
@@ -15,27 +15,27 @@
 </template>
 <script>
 export default {
-  name: 'Hello',
-  data () {
-    return {
-      
+    name: 'Hello',
+    data () {
+        return {
+        
+        }
+    },
+    computed:{
+        ibook(){
+            return this.$store.getters.getdetail;
+        }
+    },
+    methods:{
+        
+    },
+    mounted(){
+        
     }
-  },
-  computed:{
-      ibook(){
-        return this.$store.getters.getdetail;
-      }
-  },
-  methods:{
     
-  },
-  mounted(){
-
-  }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang='scss' scoped>
 .Hello{
     .footer_one{
@@ -77,6 +77,9 @@ export default {
                 }
             }
         }
+    }
+    table{
+        font-size: 0.32rem;
     }  
 }
 </style>

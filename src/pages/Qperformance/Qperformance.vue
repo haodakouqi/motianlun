@@ -3,8 +3,9 @@
   <div class="Qperformance">
       <header>
             <div class="header_left">西安 </div>
-            <div class="header_right">
+            <div class="header_right" @click="goTo('Search')">
               <input placeholder="请输入内容"/>
+              <i class="iconfont icon-sousuo"></i>
             </div>
       </header>
       <section>
@@ -80,7 +81,7 @@
           </div>
         </div>
         <div class="backTop" id="p" @click="backTop">
-            <span>头</span>
+            <i class="iconfont icon-huidaodingbu"></i>
         </div>
       </footer>
   </div>
@@ -121,6 +122,10 @@ export default {
         }
     },
     methods:{
+        goTo(a){
+            this.$router.push({name:a});
+            // this.number = b;
+        },
         backTop(){
             console.log(this.$refs.viewBox.scrollTop);
             this.$refs.viewBox.scrollTop = 0;
@@ -171,10 +176,11 @@ export default {
 .Qperformance{
     height: 100%;width: 100%;
     display: flex;flex-direction: column;
-    font-size: 0.1rem;
+    font-size: 0.1rem;position: relative;
     header{
         display: flex;width: 100%;
         height: 0.31rem;padding:0.1rem 0;
+        
         .header_left{
             width: 0.40rem;line-height: 0.31rem;
             font-size: 0.14rem;padding-left: 0.13rem;
@@ -183,10 +189,15 @@ export default {
             width: 2.98rem;margin:0 0.12rem;
             background:#f2f2f2;
             border-radius: 0.025rem;
+            position: relative;
             input{
                 display: block;height: 100%;background:#f2f2f2;
                 margin-left: 0.31rem;width: 40%;
             }
+            i{
+                position: absolute;top:0.05rem;left:0.08rem;display: block;font-size: 0.18rem;
+            }
+
         }
     }
     section{
@@ -223,13 +234,13 @@ export default {
     footer{
         flex: 1;overflow-y: scroll;
         .backTop{
-            position: fixed;bottom:0.8rem;right: 0.4rem;background: blue;
-            z-index: 88;display: none;width: 0.4rem;height: 0.4rem;line-height: 0.4rem;
+            position: absolute;bottom:0.33rem;right: 0.33rem;background:rgba(105,106,118,.6);
+            z-index: 88;display: none;width: 0.36rem;height: 0.36rem;line-height: 0.4rem;
             text-align: center;border-radius:100%;
-            span{
-                color:red;
+            i{
+                color:#ffffff;display: block;font-size: 0.28rem;
             }
-    }
+        }
     }
 }
 </style>
