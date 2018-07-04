@@ -75,7 +75,7 @@ export default {
         return {
             that:this,
             aasd:null,
-            Ntime:new date(),
+            Ntime:new Date(),
             life:false,
             datas:"",
             achild:{},
@@ -83,7 +83,7 @@ export default {
             Qkey:"全国",
             Qlength:"10",
             Qctl:"1101",
-            Qtime:"1530516039442"
+            Qtime:(new Date()).getTime()
         }
     },
     directives:{
@@ -99,6 +99,13 @@ export default {
                })
             }
         }
+    },
+    mounted(){
+        
+    },
+    updated(){
+        console.log(this.Ntime);
+        console.log(this.Ntime.getTime());
     },
     methods:{
         goTo(a){
@@ -123,7 +130,6 @@ export default {
             this.initfetch(this.Qoffset,this.datas,this.Qctl,this.Qtime,this.Qlength);
         },
         searchDir(ev){
-            // console.log(ev);
             if(ev.keyCode == "13" ){
                 this.$refs.list.style.display = 'none';
                 this.$refs.section.style.display = 'none';

@@ -41,7 +41,7 @@ export default {
   methods: {
     Qdetail(item){
         this.$store.dispatch('Detail_a',{item});
-        this.$router.push({name:'Hello'});
+        this.$router.push({name:'Qdetail'});
     },
     initfetch(fc,ft){
         fetch('http://localhost:8410/qpa/data?city='+fc+'&ctl='+ft)
