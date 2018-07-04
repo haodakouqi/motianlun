@@ -33,7 +33,7 @@
 
 <script>
 export default {
-    name:"Qindex",
+    name:"qindex",
     data () {
         return {
            number:1

@@ -70,13 +70,13 @@
                     <fchild></fchild>
                 </div>
                 <div class="swiper-slide">
-                    <gchild></gchild>
+                    <gbook></gbook>
                 </div>
                 <div class="swiper-slide">
-                    <hchild></hchild>
+                    <hbook></hbook>
                 </div>
                 <div class="swiper-slide">
-                    <ichild></ichild>
+                    <ibook></ibook>
                 </div>
           </div>
         </div>
@@ -95,11 +95,11 @@ import cchild from './cchild';
 import dchild from './dchild';
 import echild from './echild';
 import fchild from './fchild';
-import gchild from './gbook';
-import hchild from './hbook';
-import ichild from './ibook';
+import gbook from './gbook';
+import hbook from './hbook';
+import ibook from './ibook';
 export default {
-    name:"Qperformance",
+    name:"qperformance",
     data () {
         return {
             showx:"0",
@@ -165,9 +165,9 @@ export default {
         dchild,
         echild,
         fchild,
-        gchild,
-        hchild,
-        ichild,
+        gbook,
+        hbook,
+        ibook
     }
 }
 

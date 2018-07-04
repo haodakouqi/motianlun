@@ -94,7 +94,7 @@
 
 <script>
 export default {
-    name: 'Qdetail',
+    name: 'qdetail',
     data () {
         return {
             that:this,

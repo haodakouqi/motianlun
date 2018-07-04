@@ -74,7 +74,7 @@ export default {
     methods: {
         Qdetail(item){
             this.$store.dispatch('Detail_a',{item});
-            this.$router.push({name:'Qdetail'});
+            this.$router.push({name:'qdetail'});
         },
         initfetch(foffset,ft,fc,ftime,flength){
             fetch('http://localhost:8410/qpa/qsearch?offset='+foffset+'&keyword='+ft+'&city='+fc+'&time='+ftime+'&length='+flength)

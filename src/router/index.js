@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
-import Qindex from '@/pages/Qindex/Qindex'
-import Qperformance from '@/pages/Qperformance/Qperformance'
-import Search from '@/pages/Search'
-import Qdetail from '@/pages/Qdetail'
+import qindex from '@/pages/q-index/qindex'
+import qperformance from '@/pages/q-performance/qperformance'
+import search from '@/pages/search'
+import qdetail from '@/pages/qdetail'
 
 Vue.use(Router)
 
@@ -13,29 +13,29 @@ export default new Router({
     {
       path: '/',
       name: '',
-      component: Qindex,
+      component: qindex,
       children:[
         {
           path: '',
-          name: 'Qperformance',
-          component: Qperformance,
+          name: 'qperformance',
+          component: qperformance,
         }
       ]
     },
     {
-      path: '/Hello',
+      path: '/hello',
       name: 'Hello',
       component: Hello,
     },
     {
-      path: '/Search',
-      name: 'Search',
-      component: Search,
+      path: '/search',
+      name: 'search',
+      component: search,
     },
     {
-      path: '/Qdetail',
-      name: 'Qdetail',
-      component: Qdetail,
+      path: '/qdetail',
+      name: 'qdetail',
+      component: qdetail,
     }
   ]
 })

@@ -1,7 +1,7 @@
 <!-- achild -->
 <template>
   <div>
-    <div class="abook" v-if="life">
+    <div class="dbook" v-if="life">
         <div class="footer_one" v-for="(item,index) in achild.body.result.data" :key="index">
             <div class="fto_left"><img :src="item.posterURL" alt=""></div>
             <div class="fto_right">
@@ -19,22 +19,21 @@
 
 <script>
 export default {
-    name:"abook",
+    name:"dchild",
     data () {
         return {
         that:this,
         life:false,
         achild:{},
         Qoffset:"1",
-        Qcity:"全国",
+        Qcity:"音乐会",
         Qlength:"10",
-        Qctl:"1101",
+        Qctl:"6101",
         Qtime:"1530516039442"
         };
     },
     mounted() {
         this.initfetch(this.Qoffset,this.Qcity,this.Qctl,this.Qtime,this.Qlength);
-        
     },
     filters:{
         counter(value,that,indexs){
@@ -79,7 +78,6 @@ export default {
                 this.life=true;
                 this.achild=JSON.parse(data);
                 // console.log(this.achild);
-                
             })
         },
     }
@@ -87,7 +85,7 @@ export default {
 
 </script>
 <style lang='scss' scoped>
-.abook{
+.dbook{
     .footer_one{
         display: flex;border-bottom: 1px solid #f3f3f3;
         .fto_left{
