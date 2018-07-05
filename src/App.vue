@@ -17,5 +17,10 @@ export default {
 @import "./assets/font/iconfont.css";
 #app {
  height: 100%;
+ .mtl_home{
+   span{
+     display: block;
+   }
+ }
 }
 </style>

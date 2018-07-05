@@ -26,15 +26,14 @@ export default {
             life:false,
             achild:{},
             Qoffset:"1",
-            Qcity:"全国",
+            Qcity:"展览休闲",
             Qlength:"10",
             Qctl:"1101",
-            Qtime:"1530516039442"
+            Qtime:(new Date()).getTime()
         };
     },
     mounted() {
         this.initfetch(this.Qoffset,this.Qcity,this.Qctl,this.Qtime,this.Qlength);
-        
     },
     filters:{
         counter(value,that,indexs){

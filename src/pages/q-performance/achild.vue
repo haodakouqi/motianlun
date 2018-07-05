@@ -1,8 +1,8 @@
 <!-- achild -->
 <template>
   <div>
-    <div class="abook" v-if="life">
-        <div class="footer_one" v-for="(item,index) in achild.body.result.data" :key="index">
+    <div class="achild" v-if="life">
+        <div class="footer_one" v-for="(item,index) in achild.body.result.data" :key="index" @click="Qdetail(item)">
             <div class="fto_left"><img :src="item.posterURL" alt=""></div>
             <div class="fto_right">
                 <h1>{{item.showName}}</h1>
@@ -22,19 +22,18 @@ export default {
     name:"achild",
     data () {
         return {
-        that:this,
-        life:false,
-        achild:{},
-        Qoffset:"1",
-        Qcity:"全国",
-        Qlength:"10",
-        Qctl:"1101",
-        Qtime:"1530516039442"
+            that:this,
+            life:false,
+            achild:{},
+            Qoffset:"1",
+            Qcity:"全国",
+            Qlength:"10",
+            Qctl:"1101",
+            Qtime:(new Date()).getTime()
         };
     },
     mounted() {
         this.initfetch(this.Qoffset,this.Qcity,this.Qctl,this.Qtime,this.Qlength);
-        
     },
     filters:{
         counter(value,that,indexs){
@@ -72,6 +71,10 @@ export default {
         }
     },
     methods: {
+        Qdetail(item){
+            this.$store.dispatch('Detail_a',{item});
+            this.$router.push({name:'qdetail'});
+        },
         initfetch(foffset,ft,fc,ftime,flength){
             fetch('http://localhost:8410/qpa/qsearch?offset='+foffset+'&keyword='+ft+'&city='+fc+'&time='+ftime+'&length='+flength)
             .then(res=>res.json())
@@ -87,7 +90,7 @@ export default {
 
 </script>
 <style lang='scss' scoped>
-.abook{
+.achild{
     .footer_one{
         display: flex;border-bottom: 1px solid #f3f3f3;
         .fto_left{
@@ -130,3 +133,4 @@ export default {
     }  
 }
 </style>
+

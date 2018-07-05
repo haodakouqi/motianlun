@@ -8,6 +8,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var qperformance = require('./routes/Qperformance');
 var qpa = require('./routes/Qpa');
+var api = require('./routes/api');
+
+
 
 var app = express();
 app.all('*', function(req, res, next) {
@@ -33,6 +36,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/qperformance', qperformance);
 app.use('/qpa', qpa);
+app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

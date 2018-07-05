@@ -1,54 +1,54 @@
 <!-- qioajie -->
 <template>
   <div class="Qperformance">
-      <header>
-            <div class="header_left">西安 </div>
-            <div class="header_right" @click="goTo('Search')">
-              <input placeholder="请输入内容"/>
-              <i class="iconfont icon-sousuo"></i>
+        <header>
+                <div class="header_left">西安</div>
+                <div class="header_right" @click="goTo('search')">
+                <input placeholder="请输入内容"/>
+                <i class="iconfont icon-sousuo"></i>
+                </div>
+        </header>
+        <section>
+            <div class="section_index">
+                <div class="sec_choose" :class="{'sec_active':'0'==showx}" @click='Qchange("0",["西安","演唱会"])'>
+                    <div class="box"><span>全部</span></div>
+                </div>
+                <div class="sec_choose" :class="{'sec_active':'1'==showx}" @click='Qchange("1",["香港","演唱会"])'>
+                    <div class="box"><span>演唱会</span></div>
+                </div>
+                <div class="sec_choose" :class="{'sec_active':'2'==showx}" @click='Qchange("2",["上海","话剧歌剧"])'>
+                    <div class="box"><span>话剧歌剧</span></div>
+                </div>
+                <div class="sec_choose" :class="{'sec_active':'3'==showx}" @click='Qchange("3",["广州","音乐会"])'>
+                    <div class="box"><span>音乐会</span></div>
+                </div>
+                <div class="sec_choose" :class="{'sec_active':'4'==showx}" @click='Qchange("4",["香港","体育赛事"])'>
+                    <div class="box"><span>体育赛事</span></div>
+                </div>
+                <div class="sec_choose" :class="{'sec_active':'5'==showx}" @click='Qchange("5",["纽约","舞蹈芭蕾"])'>
+                    <div class="box"><span>舞蹈芭蕾</span></div>
+                </div>
+                <div class="sec_choose" :class="{'sec_active':'6'==showx}" @click='Qchange("6",["东京","儿童亲子"])'>
+                    <div class="box"><span>儿童亲子</span></div>
+                </div>
+                <div class="sec_choose" :class="{'sec_active':'7'==showx}" @click='Qchange("7",["深圳","展览休闲"])'>
+                    <div class="box"><span>展览休闲</span></div>
+                </div>
+                <div class="sec_choose" :class="{'sec_active':'8'==showx}" @click='Qchange("8",["西安","曲艺杂谈"])'>
+                    <div class="box"><span>曲艺杂谈</span></div>
+                </div>
             </div>
-      </header>
-      <section>
-          <div class="section_index">
-            <div class="sec_choose" :class="{'sec_active':'0'==showx}" @click='Qchange("0",["西安","演唱会"])'>
-                <div class="box"><span>全部</span></div>
+        </section>
+        <nav>
+            <div class="nav_box">
+                <span>推荐排序</span>
             </div>
-            <div class="sec_choose" :class="{'sec_active':'1'==showx}" @click='Qchange("1",["香港","演唱会"])'>
-                <div class="box"><span>演唱会</span></div>
+            <div class="nav_box">
+                <span>全部时间</span>
             </div>
-            <div class="sec_choose" :class="{'sec_active':'2'==showx}" @click='Qchange("2",["上海","话剧歌剧"])'>
-                <div class="box"><span>话剧歌剧</span></div>
-            </div>
-            <div class="sec_choose" :class="{'sec_active':'3'==showx}" @click='Qchange("3",["广州","音乐会"])'>
-                <div class="box"><span>音乐会</span></div>
-            </div>
-            <div class="sec_choose" :class="{'sec_active':'4'==showx}" @click='Qchange("4",["香港","体育赛事"])'>
-                <div class="box"><span>体育赛事</span></div>
-            </div>
-            <div class="sec_choose" :class="{'sec_active':'5'==showx}" @click='Qchange("5",["纽约","舞蹈芭蕾"])'>
-                <div class="box"><span>舞蹈芭蕾</span></div>
-            </div>
-            <div class="sec_choose" :class="{'sec_active':'6'==showx}" @click='Qchange("6",["东京","儿童亲子"])'>
-                <div class="box"><span>儿童亲子</span></div>
-            </div>
-            <div class="sec_choose" :class="{'sec_active':'7'==showx}" @click='Qchange("7",["深圳","展览休闲"])'>
-                <div class="box"><span>展览休闲</span></div>
-            </div>
-            <div class="sec_choose" :class="{'sec_active':'8'==showx}" @click='Qchange("8",["西安","曲艺杂谈"])'>
-                <div class="box"><span>曲艺杂谈</span></div>
-            </div>
-          </div>
-      </section>
-      <nav>
-          <div class="nav_box">
-              <span>推荐排序</span>
-          </div>
-          <div class="nav_box">
-              <span>全部时间</span>
-          </div>
-          <div class="nav_ico"></div>
-      </nav>
-      <footer ref="viewBox" v-ascroll>
+            <div class="nav_ico"></div>
+        </nav>
+    <footer ref="viewBox" v-ascroll>
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -78,12 +78,12 @@
                 <div class="swiper-slide">
                     <ibook></ibook>
                 </div>
-          </div>
+            </div>
         </div>
         <div class="backTop" id="p" @click="backTop">
             <i class="iconfont icon-huidaodingbu"></i>
         </div>
-      </footer>
+    </footer>
   </div>
 </template>
 
@@ -112,7 +112,7 @@ export default {
             inserted(el){
                 var p =document.getElementById('p');
                 el.addEventListener('scroll', function(){
-                    if(this.scrollTop>1000){
+                    if(this.scrollTop>100){
                         p.style.display="block";
                     }else{
                         p.style.display="none";
@@ -180,7 +180,6 @@ export default {
     header{
         display: flex;width: 100%;
         height: 0.31rem;padding:0.1rem 0;
-        
         .header_left{
             width: 0.40rem;line-height: 0.31rem;
             font-size: 0.14rem;padding-left: 0.13rem;
@@ -222,21 +221,19 @@ export default {
         display: flex;height: 0.37rem;position: relative;
         line-height: 0.37rem;
         border-top:1px solid #f8f8fa;
-        border-bottom:2px solid #f8f8fa;box-shadow:3px 3px 3px #f8f8fa;
+        border-bottom:2px solid #f8f8fa;
         .nav_box{
-            width: 50%;text-align: center
+            width: 50%;text-align: center;height: 0.37rem;background: #ffffff;
         }
         .nav_ico{
-            position: absolute;width: 1px;height: 0.18rem;background: #f2f2f2;
+            position: absolute;width: 1px;height: 0.37rem;background: #f2f2f2;
             top:0.09rem;left: 1.87rem;
         }
     }
     footer{
         flex: 1;overflow-y: scroll;
         .backTop{
-            position: absolute;bottom:0.33rem;right: 0.33rem;background:rgba(105,106,118,.6);
-            z-index: 88;display: none;width: 0.36rem;height: 0.36rem;line-height: 0.4rem;
-            text-align: center;border-radius:100%;
+            position: absolute;bottom:0.53rem;right: 0.33rem;background:rgba(105,106,118,.6);z-index: 88;display: none;width: 0.36rem;height: 0.36rem;line-height: 0.4rem;text-align: center;border-radius:100%;
             i{
                 color:#ffffff;display: block;font-size: 0.28rem;
             }

@@ -30,7 +30,7 @@
                 <span>{{ibook.venueAddr}}</span>
                 <p>{{ibook.venueName}}</p>
             </div>
-            <img src="../assets/img/address.jpg">
+            <div class="body22" @click="goIn('qDetailone')"><img src="../assets/img/address.jpg"></div>
         </div>
         <div class="body3">
             <img src="../assets/img/redbag.jpg">
@@ -59,7 +59,7 @@
             <p>他穿一件圆领白T恤，袖子挽起，修长的手熟练地拨动琴弦。他剪了短发，脸庞还是那么帅得深沉，即使在岁月的洗礼下沧桑了不少，也还是遮盖不住他如孩子一般的纯真。
             </p>
             <div class="body71">
-                <img src="../assets/img/pic1.jpg">
+                <img :src="ibook.posterURL" alt="">
             </div>
             <p>在生活中，他抽中南海，会捡掉在地上的烟，但不随便丢烟头；他不喝酒，更喜欢喝水和咖啡，喜欢吃什么，就会一连吃好几个月；他衣着随意，不挑牌子，但随便怎么穿，都能穿出一种独具风格的气质；他接受采访从不随意听从记者安排，想说什么就说，不想说，怎么问也不会说；他拍照从不轻易听摄影师摆弄，不换衣服，不摆造型，不假装笑，但每次封面出来，都很有型；他写歌总是发自内心，要么写，就写真实感觉，要么就不写；他父母都是北大教授，从不干涉儿子的决定，朴树一开始不想考大学（能上北大），父母希望他考，就考了首都师范大学，不到两年就朴树在退学，父母没干涉，甚至朴树在03年后好几年时间里，都不知道他在干什么；朴树的妻子很漂亮，她喜欢他的才华和诚恳，一起开过小店，日子简单充实；韩寒喜欢朴树，喜欢他的诚恳以及淡泊名利，在高晓松眼里，朴树一直是个阳光男孩。
             </p>
@@ -132,6 +132,9 @@ export default {
     methods:{
         goTo(a){
             this.$router.go(a);
+        },
+        goIn(addres){
+            this.$router.push({name:addres});
         },
         initData(Qoffset,Qid,Qtime,Qlength){
             fetch('http://localhost:8410/qpa/qconnect?offset='+Qoffset+'&id='+Qid+'&time='+Qtime+'&length='+Qlength)
@@ -297,9 +300,12 @@ export default {
                 color: #0d0000;
                 }
             }
-            img{
+            .body22{
                 width: 0.685rem;
                 height: 0.53rem;
+                img{
+                    display: block;
+                }
             }
         }
         .body3 img{
@@ -381,7 +387,7 @@ export default {
             .body71{
                 width: 100%; height: 100%;
                 img{
-                    width: 100%;height: 100%;
+                    width: aoto;height: auto;
                     display:block;
                 }
             }

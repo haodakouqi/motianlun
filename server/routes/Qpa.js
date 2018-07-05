@@ -66,4 +66,16 @@ router.get('/qconnect',function (req,res) {
 });
 
 
+router.get('/qfind',function (req,res) {
+  let city =req.query.city;
+  let time = req.query.time;
+  let url = encodeURI(`https://m.moretickets.com/showapi/pub/site/1009/banner/app?siteCityOID=${city}&time=${time}&src=m_web`);
+  req.on('error', err=>console.error(err));
+  unirest.get(url,function (response) {
+    reponse = JSON.stringify(response);
+    res.json(reponse);
+  })
+});
+
+
 module.exports = router;

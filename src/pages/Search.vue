@@ -22,7 +22,7 @@
         </ul>
 
         <ul id="search_dir" ref="search_dir">
-            <li  v-for="(p,index) in achild" :key="index">
+            <li  v-for="(p,index) in achild" :key="index" @click="Qdetail(p)">
                 <div class="dir_l">
                     <img :src="p.posterURL">
                 </div>
@@ -111,15 +111,16 @@ export default {
         goTo(a){
             this.$router.go(a);
         },
+        Qdetail(item){
+            this.$store.dispatch('Detail_a',{item});
+            this.$router.push({name:'qdetail'});
+        },
         initfetch(foffset,ft,fc,ftime,flength){
             fetch('http://localhost:8410/qpa/qsearch?offset='+foffset+'&keyword='+ft+'&city='+fc+'&time='+ftime+'&length='+flength)
             .then(res=>res.json())
             .then(data=>{
                 this.life=true;
                 this.achild=JSON.parse(data).body.result.data;
-                // console.log(JSON.parse(data));
-                console.log(this.datas);
-                
             })
         },
         listShow(){
