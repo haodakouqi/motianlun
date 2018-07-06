@@ -1,8 +1,8 @@
 <template>
     <div  class="Ltop" id="top-art">
         <img class="ser" src="../assets/img/ser.png"/>
-        <a href="javascript:;" class="k1" @click="goLink"><span>{{msg}}</span><img src="../assets/img/down.png"></a>
-        <input id="inp"  type="text" @focus="goTo('search')" value="搜索明星、演出、赛事、场馆">
+        <a href="javascript:;" class="k1" @click="goTo('Address')"><span>{{Tcity}}</span><img src="../assets/img/down.png"></a>
+        <input id="inp"  type="text" @click="goTo('search')" value="搜索明星、演出、赛事、场馆">
     </div>
 </template>
 <script type="text/ecmascript-6">
@@ -13,34 +13,17 @@
             msg:'北京'
         }
     },
+    computed:{
+        Tcity(){
+            return this.$store.getters.getlocation;
+        }
+    },
     methods: {
-        // ...mapActions(['fun1']),
-        buffer(){
-            // $(window).scroll(function(){
-            // if($(window).scrollTop() > 100){
-            //     $("#top-art").css({'background':'#ffffff'}).fadeIn(1000);
-            //     $(".k1").css({'color':'#9a9a9a'}).fadeIn(1000);
-            // } else {
-            // var st =  Math.ceil(Math.ceil($(window).scrollTop()-10)/10);
-            // var sts = st/10;
-            //     if(sts < 0){
-            //         sts = 0;
-            //     }
-            //     $("#top-art").css({'background':'rgba(250,250,250,'+sts+')','color':'transparent'}).fadeIn(1000);
-            //     $(".k1").css({'color':'#000'}).fadeIn(1000);
-            //     }
-            // })
-        },
         goTo(a){
             this.$router.push({name:a});
-            // this.number = b;
-        },
-        goLink(){
-
         }
     }, 
     mounted(){
-        this.buffer();
     }
    
 }
@@ -49,7 +32,7 @@
 .Ltop{
     display:flex;
     align-items: center;
-    padding:0.1rem 0.13rem;
+    padding:0.1rem 0.10rem;
     position: relative;
     a{
         font-size: 0.15rem;
@@ -58,6 +41,9 @@
         align-items: center;
         img{
             margin:0 0.12rem 0 0.05rem;
+        }
+        span{
+            white-space: nowrap;
         }
     }
     input{

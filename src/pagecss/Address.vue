@@ -88,7 +88,9 @@
               names=  value.innerHTML;
             }
           });
-          this.$router.push({name:"MtlHome",params:{str:names}});
+          this.$store.state.locationState = names;
+          this.$router.go('-1');
+          // this.$router.push({name:"MtlHome",params:{str:names}});
         }else{
           localStorage.setItem('savecitys',"[]");
         }
@@ -164,7 +166,9 @@
               names=  value.innerHTML;
             };
           });
-          this.$router.push({name:"MtlHome",params:{str:names}});
+          this.$store.state.locationState = names;
+          this.$router.go('-1');
+          // this.$router.push({name:"MtlHome",params:{str:names}});
         }else{
           localStorage.setItem('smallcity',"[]");
         }

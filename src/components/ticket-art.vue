@@ -30,9 +30,13 @@ export default {
     name:'ticketart',
     data(){
         return{
-            city:'北京',
             ctl:"演唱会",
             turndata:[]
+        }
+    },
+    computed:{
+        Tcity(){
+            return this.$store.getters.getlocation;
         }
     },
     methods:{
@@ -46,7 +50,7 @@ export default {
 		}
     },
     mounted(){
-        this.fetchDate(this.city,this.ctl);
+        this.fetchDate(this.Tcity,this.ctl);
         // this.$on('getParams',(data) => {
         //     this.mate = data;
         //     this.fetchDate();
@@ -56,6 +60,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .ticketart{
+    // height: 100%;width:100%;
     .center{
         padding-bottom:0.6rem;
     }

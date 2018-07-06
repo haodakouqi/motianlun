@@ -5,5 +5,6 @@ export default{
     // 详情页数据
     detail:{},
     // 历史记录
-    search_history:{}
+    search_history:{},
+    locationState:{}
 }

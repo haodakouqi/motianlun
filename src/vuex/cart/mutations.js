@@ -12,6 +12,10 @@ export default {
         state.search_history=item;
         console.log(item);
     },
+    [types.LOCALTION](state,city){
+        state.locationState=city;
+        console.log(city);
+    },
     // [types.ADD_DB](state){
     //     localStorage.setItem('vuex_cart',JSON.stringify(state.add));
     // },

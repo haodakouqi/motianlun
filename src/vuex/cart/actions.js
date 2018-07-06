@@ -13,4 +13,7 @@ export default{
         commit(types.QHISTORY,item);
         // commit(types.ADD_DB);
     },
+    location_data:({commit},{city})=>{
+        commit(types.LOCALTION,city);
+    },
 }

@@ -68,6 +68,17 @@
           }
       }
     },
+    computed:{
+        Tcity(){
+            return this.$store.getters.getlocation;
+        }
+    },
+    // watch:{
+    //   Tcity:function(nval,old){
+    //     this.unitData(nval);
+    //     console.log(nval);
+    //   }
+    // },
     components:{
       homeIntroduce,
       homeMore,
@@ -120,10 +131,8 @@
           })
       }
       ,changedata(){
-        this.addressdata = this.$route.params.str;
-        console.log(this.$route.params.str);
-        if (this.addressdata){
-          this.unitData(this.addressdata);
+        if (this.Tcity){
+          this.unitData(this.Tcity);
         }
       }
     },

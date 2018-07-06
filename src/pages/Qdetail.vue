@@ -224,7 +224,7 @@ export default {
         }
     }
     .mainbox{
-        flex: 1;overflow-y: scroll;width:100%;
+        flex: 1;overflow-y: scroll;width:100%;height: 100%;
         .body1{
             .body11{
                 display: flex;border-bottom: 1px solid #f3f3f3;color:#ffffff;

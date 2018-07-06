@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="addr">
-      <span @click="gotoaddress">{{address}}</span><!--<i></i>-->
+      <span @click="gotoaddress">{{Tcity}}</span><!--<i></i>-->
     </div>
     <div class="title">
       <i class="iconfont icon-motianlun"></i>
@@ -26,6 +26,11 @@
           return {
             address:'定位中...'
           }
+      },
+      computed:{
+        Tcity(){
+            return this.$store.getters.getlocation;
+        }
       },
       watch:{
         honetop:function(newval,old){
@@ -64,27 +69,9 @@
         gotoaddress(){
           this.$router.push({name:"Address"});
         },
-        ready () {
-          if (this.datas){
-            console.log(1);
-            this.address = this.datas;
-          }else{
-            let geolocation = new BMap.Geolocation()
-            geolocation.getCurrentPosition((r) => {
-              if (r.point) {
-                this.address = r.address.city;
-              }
-            },()=>{
-              this.address= '定位失败';
-            })
-          }
-        }
       },
       mounted(){
-          this.$nextTick(function () {
-            console.log(this.datas);
-            this.ready();
-          });
+
       }
     }
 </script>

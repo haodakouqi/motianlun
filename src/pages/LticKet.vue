@@ -6,7 +6,6 @@
         <section v-ascroll="{color:this,book:value}">
              <ticketart ref="ticketart"></ticketart>
         </section>
-       
     </div>
 </template>
 <script type="text/ecmascript-6">
@@ -24,6 +23,11 @@ export default {
     components:{
         top,
         ticketart
+    },
+    computed:{
+        Tcity(){
+            return this.$store.getters.getlocation;
+        }
     },
     directives:{
         ascroll:{
@@ -63,12 +67,14 @@ export default {
 <style lang="scss" scoped>
 .LticKet{
     height: 100%;width:100%;
+    display: flex;
+    flex-direction: column;
     header{
-        position: fixed;top:0rem;width:100%;
+        width:100%;height: 0.55rem;
         transition: all 1.0s;
     }
     section{
-        height: 100%;width:100%;overflow-y: scroll;
+        width:100%;overflow-y: scroll;flex: 1;margin-top:-0.55rem; 
     }
 }
 </style>

@@ -14,4 +14,7 @@ export default{
     getdetail(state){
         return state.detail;
     },
+    getlocation(state){
+        return state.locationState;
+    },
 }

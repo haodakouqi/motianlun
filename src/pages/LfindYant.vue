@@ -52,7 +52,7 @@ export default {
         height: 0.55rem;
     }
     ul{
-        padding-bottom:0.65rem; flex:1;overflow-y: scroll;
+       flex:1;overflow-y: scroll;
         li{
             display:flex;
             flex-direction: column;

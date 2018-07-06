@@ -2,7 +2,7 @@
 <template>
   <div class="Qperformance">
         <header>
-                <div class="header_left">西安</div>
+                <div class="header_left" @click="goTo('Address')">{{Tcity}}</div>
                 <div class="header_right" @click="goTo('search')">
                 <input placeholder="请输入内容"/>
                 <i class="iconfont icon-sousuo"></i>
@@ -107,6 +107,11 @@ export default {
             life:true
         };
     },
+    computed:{
+        Tcity(){
+            return this.$store.getters.getlocation;
+        }
+    },
     directives:{
         ascroll:{
             inserted(el){
@@ -181,11 +186,11 @@ export default {
         display: flex;width: 100%;
         height: 0.31rem;padding:0.1rem 0;
         .header_left{
-            width: 0.40rem;line-height: 0.31rem;
+            width: 0.50rem;line-height: 0.31rem;
             font-size: 0.14rem;padding-left: 0.13rem;
         }
         .header_right{
-            width: 2.98rem;margin:0 0.12rem;
+            width: 2.88rem;margin:0 0.12rem;
             background:#f2f2f2;
             border-radius: 0.025rem;
             position: relative;
