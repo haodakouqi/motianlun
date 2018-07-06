@@ -70,11 +70,12 @@ export default {
     display: flex;
     flex-direction: column;
     header{
-        width:100%;height: 0.55rem;
-        transition: all 1.0s;
+        width:100%;height: 0.55rem;position: fixed;
+        top:0rem;
+        transition: all 0.5s;
     }
     section{
-        width:100%;overflow-y: scroll;flex: 1;margin-top:-0.55rem; 
+        width:100%;overflow-y: scroll;flex: 1;
     }
 }
 </style>

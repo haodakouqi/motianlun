@@ -70,7 +70,6 @@
       width:0.45rem;
       height:0.45rem;
     }
-
   }
 }
 </style>

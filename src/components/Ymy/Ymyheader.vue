@@ -5,14 +5,6 @@
             <img src="../../assets/Yimg/sin.jpg" >
             <img src="../../assets/Yimg/set.jpg" >
         </div>
-        <!-- <router-link to="userInfo ? '/Ybb' :'/Ylogin'" class="userbb">
-            <div class="imgbox"></div>
-            <div class="pbox">
-                <p class="tpp">{{ userInfo}}</p>
-                <p class="bpp">{{cookieword}}</p>
-            </div>
-            <img class="rightbtn" src="../../assets/Yimg/riJ.jpg">
-        </router-link> -->
         <div class="userbb" @click="gologin">
             <div class="imgbox"></div>
             <div class="pbox">
@@ -33,7 +25,6 @@
 </template>
 
 <script type="text/ecmascript-6">
-// import {mapState} from 'vuex'
 export default {
     computed: {
     //   ...mapState(['userInfo'])  
@@ -41,6 +32,7 @@ export default {
   data() {
     return {
         cookieword:"无需注册，快捷登录",
+        userInfo:window.localStorage.getItem("locationusername")
     }
   },
   components: {

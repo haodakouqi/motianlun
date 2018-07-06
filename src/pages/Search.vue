@@ -166,7 +166,8 @@ export default {
 
 <style lang="scss" scoped>
 .Slayout{
-    display: flex;flex-direction: column;height: 100%;width: 100%;
+    display: flex;flex-direction: column;
+    height: 100%;width: 100%;
     header{
         height:0.5rem;width:100%;background: #ffffff;
         display: flex;border-bottom: 1px solid #fafafa;

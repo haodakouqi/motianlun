@@ -20,7 +20,8 @@ import Ylogin from '../pages/Ylogin.vue'
 
 Vue.use(Router)
 
-export default new Router({
+
+let router = new Router({
   routes: [
     {
       path: '/',
@@ -92,3 +93,17 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.path == '/Ylogin'){
+    next();
+  }
+  if (localStorage.getItem("locationusername")){
+    next();
+  }
+  if (!localStorage.getItem("locationusername")){
+    next('/Ylogin');
+  }
+});
+
+export default router;
