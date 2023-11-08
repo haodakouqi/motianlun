@@ -1,44 +1,44 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+  <el-config-provider :locale="locale" :size="size">
+    <router-view></router-view>
+  </el-config-provider>
 </template>
 
-<script>
-
-export default {
+<script lang="ts">
+import { defineComponent, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useStore } from 'vuex'
+export default defineComponent({
   name: 'App',
-  data(){
-    return{
-
+  setup() {
+    const store = useStore()
+    const i18n = useI18n()
+    const size = computed(() => store.state.app.elementSize)
+    const messages: any = i18n.messages.value
+    const locale = computed(() => {
+      return {
+        name: i18n.locale.value,
+        el: messages[i18n.locale.value].el,
+      }
+    })
+    return {
+      locale,
+      size,
     }
-  },
-  methods:{
-    __location(){
-      let geolocation = new BMap.Geolocation()
-      geolocation.getCurrentPosition((r) => {
-          let city_book = r.address.city;
-          console.log(city_book);
-          this.$store.state.locationState = city_book;
-      })
-    }
-  },
-  mounted(){
-    this.__location();
   }
-}
+})
 </script>
 
-<style lang='scss'>
-@import "./assets/common/public.scss";
-// @import '../node_modules/mint-ui/lib/style.css';
-@import "./assets/font/iconfont.css";
+<style>
 #app {
- height: 100%;width:100%;
- .mtl_home{
-   span{
-     display: block;
-   }
- }
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  width: 100%;
+  height: 100vh;
+}
+:focus-visible {
+  outline: none;
 }
 </style>

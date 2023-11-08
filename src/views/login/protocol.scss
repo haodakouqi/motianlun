@@ -1,0 +1,55 @@
+.protocol-container {
+  max-width: 800px;
+  margin: 40px auto 100px;
+  padding-bottom: 100px;
+  .protocol-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+  .protocol-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .protocol-content {
+    .protocol-content-content {
+      line-height: 22px;
+      margin-bottom: 10px;
+    }
+    .protocol-content-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+    .protocol-content-subtitle {
+      line-height: 28px;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 10px 0 8px 0;
+    }
+    .protocol-content-explanation {
+      line-height: 26px;
+      font-size: 14px;
+      margin: 10px 0;
+    }
+    .protocol-content-ul {
+      padding-left: 30px;
+      margin: 10px 0;
+      li {
+        line-height: 26px;
+        font-size: 14px;
+      }
+    }
+    .code-pre {
+      line-height: 26px;
+      font-size: 14px;
+      margin: 8px 0;
+      word-break: break-all;
+    }
+    .mr-5 {
+      margin-right:5px
+    }
+  }
+}

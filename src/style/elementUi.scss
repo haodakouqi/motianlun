@@ -1,0 +1,105 @@
+:root {
+  // element主题色修改
+  // --el-color-primary: #4d70ff;
+  --el-color-primary: #1975FF;
+  --system-text-primary: #fff;
+
+  // 菜单颜色相关
+  --el-menu-text-color: #303133;
+  --el-menu-active-color: var(--el-color-primary);
+  --el-menu-bg-color: #fff;
+  // --el-menu-hover-bg-color: var(--el-color-primary);
+
+  // --el-menu-hover-bg-color: rgb(25, 26, 35);
+
+  // --el-menu-item-height: 46px;
+  // --el-menu-sub-item-height: calc(var(--el-menu-item-height) - 6px);
+  // --el-menu-horizontal-sub-item-height: 36px;
+  // --el-menu-item-font-size: var(--el-font-size-base);
+  // --el-menu-item-hover-fill: var(--el-color-primary-light-9);
+  // --el-menu-border-color: var(--el-border-color);
+  // --el-menu-base-level-padding: 20px;
+  // --el-menu-level-padding: 20px;
+  // --el-menu-icon-width: 24px;
+
+  // header区域
+  --system-header-background: #fff;
+  --system-header-text-color: #303133;
+  --system-header-breadcrumb-text-color: #606266;
+  --system-header-item-hover-color: rgba(0,0,0,.06);
+  --system-header-border-color: #d8dce5;
+  --system-header-tab-background: #fff;
+
+  // contaier区域，父框架
+  --system-container-background: #f0f2f5;
+  --system-container-main-background: #fff;
+
+
+
+  // 页面区域, 这一块是你在自己写的文件中使用主题，核心需要关注的地方
+  --system-page-background: #fff; // 主背景
+  --system-page-color: #303133; // 主要的文本颜色
+  --system-page-tip-color: rgba(0, 0, 0, 0.45); // 协助展示的文本颜色
+  --system-page-border-color: #ebeef5; // 通用的边框配置色，便于主题扩展
+}
+
+/**
+ * @description: 菜单
+ * @param {*}
+ */
+.el-menu-item {
+  &:not(.is-active) {
+    &:hover {
+      background-color: var(--el-menu-bg-color);
+      color: var(--el-color-primary);
+    }
+  }
+}
+
+.el-sub-menu__title:hover {
+  background-color: var(--el-menu-bg-color);
+  color: var(--el-color-primary);
+}
+.el-menu-item {
+  &.is-active {
+    background-color: var(--el-menu-hover-bg-color);
+    border-radius: 4px;
+    // box-shadow: 0 0 2px 1px var(--el-color-primary) !important;
+  }
+}
+
+.el-table {
+  th {
+    .cell {
+      line-height: 40px;
+      color: rgb(55 65 81 / 1)
+    }
+  }
+  td {
+    .cell {
+      line-height: 40px;
+      color: rgb(75 85 99 / 1)
+    }
+  }
+  .is-leaf {
+    background: #F7FBFF !important;
+  }
+}
+// 进度条颜色修改为主题色
+body #nprogress .bar {
+  background-color: var(--el-color-primary);
+}
+body #nprogress .peg {
+  box-shadow: 0 0 10px var(--el-color-primary), 0 0 5px var(--el-color-primary);
+}
+body #nprogress .spinner-icon {
+  border-top-color: var(--el-color-primary);
+  border-left-color: var(--el-color-primary);
+}
+// .el-dialog{
+//   --el-dialog-padding-primary: 10px !important;
+// }
+
+.el-dialog__body {
+  padding-top: 10px;
+}

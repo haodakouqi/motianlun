@@ -1,0 +1,170 @@
+@import './transition.scss';
+@import './mixin.scss';
+@import './elementUi.scss';
+// @import './theme/chinese.scss';
+// @import './theme/dark.scss';
+
+// 隐藏input type=number元素，右侧的上下箭头
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  margin: 0; 
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+@for $i from 1 through 10 {
+  /* 字体 */
+  .fs-#{10 + $i*2} {
+    font-size: (10 + $i * 2) + px !important;
+  }
+
+  /* margin */
+  .mt-#{$i*5} {
+    margin-top: $i * 5 + px !important;
+  }
+  .mb-#{$i*5} {
+    margin-bottom: $i * 5 + px !important;
+  }
+  .ml-#{$i*5} {
+    margin-left: $i * 5 + px !important;
+  }
+  .mr-#{$i*5} {
+    margin-right: $i * 5 + px !important;
+  }
+}
+
+/* 单行省略 */
+.global-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.global-flex {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.global-column-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/**
+ * @description: 列表页 查询通用class
+ * @param {*}
+ */
+.global-form {
+  display: flex;
+  gap: 10px;
+  
+  .el-input {
+    width: 200px;
+  }
+  .el-select {
+    width: 200px;
+  }
+  .global-form-right {
+    margin-left: auto;
+  }
+}
+
+.global-model {
+  display: flex;
+  .global-model-right {
+    margin-left: auto;
+  }
+}
+
+.global-scrollbar {
+  overflow-y: auto;
+  @include scroll-bar(5px);
+}
+
+/**
+ * @description: el-card 查询通用class
+ * @param {*}
+ */
+.global-el-card-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 5px);
+  .el-card__header {
+    text-align: left;
+  }
+  .el-card__body {
+    flex: 1;
+    overflow-y: auto;
+    @include scroll-bar(5px);
+  }
+}
+
+.layout-container {
+  &-form {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 15px 0;
+    &-handle {
+      display: flex;
+      justify-content: flex-start;
+      .export-excel-btn {
+        margin-left: 15px;
+      }
+    }
+    &-search {
+      display: flex;
+      justify-content: flex-end;
+      .search-btn {
+        margin-left: 15px;
+      }
+    }
+    .el-form-item {
+      margin-bottom: 0;
+    }
+  }
+  &-table {
+    flex: 1;
+    height: 100%;
+    padding: 15px;
+    overflow: auto;
+  }
+}
+.flex-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.flex {
+  display: flex;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+
+/** element-plus **/
+.el-icon {
+  text-align: center;
+}
+
+/** 用于提示信息 **/
+.my-tip {
+  background-color: #f1f1f1;
+  padding: 5px 10px;
+  text-align: left;
+  border-radius: 4px;
+}
